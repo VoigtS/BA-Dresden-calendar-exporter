@@ -52,8 +52,8 @@ if __name__ == '__main__':
      source of the website */
     """
     # Change these values.
-    userid = '3004088'
-    hashcode = 'a2684f89768d5f74d9eb6892524cac92'
+    userid = 'userid'
+    hashcode = 'hash'
 
     # Change these values only when desired.
     starttime = int(time.time())
