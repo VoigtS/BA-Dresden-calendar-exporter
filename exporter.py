@@ -16,7 +16,7 @@ def fetch_calendar(userid, hash, start, end, id):
         data_stream = requests.get(url, verify='selfservice-campus-dual-cert-chain.pem')
     except:
         print('Request went wrong!')
-        return 0
+        return None
     content = json.loads(data_stream.content.decode())
     return content
 
@@ -52,14 +52,16 @@ if __name__ == '__main__':
      source of the website */
     """
     # Change these values.
-    userid = 'userid'
-    hashcode = 'hash'
+    userid = '3004088'
+    hashcode = 'a2684f89768d5f74d9eb6892524cac92'
 
     # Change these values only when desired.
     starttime = int(time.time())
-    stoptime = int(time.time() + 20000000)
+    # This calculation will get the calender data of lessons which are about 8 month in the future.
+    stoptime = int(time.time() + 2 * 10 ** (len(str(int(time.time()))) -3))
     trailing_id = '0'
 
+    # The program begins here.
     content_data = fetch_calendar(userid, hashcode, starttime, stoptime, trailing_id)
     if content_data is not None:
         build_ics_file(content_data)
