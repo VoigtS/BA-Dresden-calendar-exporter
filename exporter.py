@@ -57,10 +57,10 @@ if __name__ == '__main__':
 
     # Change these values only when desired.
     starttime = int(time.time())
-    # This calculation will get the calender data of lessons which are about 8 month in the future.
-    stoptime = int(time.time() + 2 * 10 ** (len(str(int(time.time()))) -3))
+    # This calculation will get the calender data of lessons which are about 4 month in the future, which should be a semester.
+    stoptime = int(time.time() + 10500000)
     trailing_id = '0'
-
+    
     # The program begins here.
     content_data = fetch_calendar(userid, hashcode, starttime, stoptime, trailing_id)
     if content_data is not None:
