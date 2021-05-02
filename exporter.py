@@ -56,8 +56,8 @@ if __name__ == '__main__':
     hashcode = 'hash'
 
     # Change these values only when desired.
-    starttime = '0'
-    stoptime = int(time.time())
+    starttime = int(time.time())
+    stoptime = int(time.time() + 20000000)
     trailing_id = '0'
 
     content_data = fetch_calendar(userid, hashcode, starttime, stoptime, trailing_id)
